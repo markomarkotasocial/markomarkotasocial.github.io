@@ -1,10 +1,171 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Test page setup</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Marko Markota — .NET / Azure Developer</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          accent: '#ff3c38',
+          ink: '#1a1a1a',
+        }
+      }
+    }
+  }
+</script>
 </head>
-<body>
-    <h1>It works!</h1>
+<body class="bg-white text-ink antialiased">
+
+  <!-- Nav -->
+  <header class="sticky top-0 z-50 bg-white/90 backdrop-blur border-b border-gray-100">
+    <div class="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
+      <a href="#top" class="flex items-center gap-2 font-semibold">
+        <span class="w-8 h-8 rounded-full border-2 border-accent text-accent flex items-center justify-center text-xs font-bold">MM</span>
+        <span>Marko Markota</span>
+      </a>
+
+      <nav class="hidden md:flex items-center gap-8 text-sm font-medium">
+        <a href="#about" class="hover:text-accent transition-colors">About</a>
+        <a href="#project" class="hover:text-accent transition-colors">Project</a>
+        <a href="#skills" class="hover:text-accent transition-colors">Skills</a>
+        <a href="#contact" class="border border-accent text-accent px-4 py-1.5 rounded hover:bg-accent hover:text-white transition-colors">Contact</a>
+      </nav>
+
+      <button id="menuBtn" class="md:hidden p-2 -mr-2" aria-label="Toggle menu">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+    </div>
+
+    <nav id="mobileMenu" class="hidden md:hidden border-t border-gray-100 px-6 py-4 flex flex-col gap-4 text-sm font-medium">
+      <a href="#about" class="hover:text-accent transition-colors">About</a>
+      <a href="#project" class="hover:text-accent transition-colors">Project</a>
+      <a href="#skills" class="hover:text-accent transition-colors">Skills</a>
+      <a href="#contact" class="text-accent">Contact</a>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <section id="top" class="max-w-5xl mx-auto px-6 pt-20 pb-16 md:pt-28 md:pb-24">
+    <p class="text-accent font-semibold tracking-wide uppercase text-sm mb-4">Hello, I'm</p>
+    <h1 class="text-4xl md:text-6xl font-extrabold leading-tight mb-6">Marko Markota</h1>
+    <p class="text-xl md:text-2xl text-gray-600 max-w-2xl mb-8">.NET / Azure Developer — 14 years of experience</p>
+    <div class="flex flex-wrap items-center gap-4">
+      <a href="#contact" class="bg-accent text-white font-semibold px-6 py-3 rounded hover:bg-red-600 transition-colors">Get in touch</a>
+      <a href="https://linkedin.com/in/markomarkota" target="_blank" rel="noopener" class="text-sm font-medium underline underline-offset-4 hover:text-accent transition-colors">or connect on LinkedIn</a>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="border-t border-gray-100 bg-gray-50">
+    <div class="max-w-5xl mx-auto px-6 py-16 md:py-24">
+      <h2 class="text-3xl font-bold text-accent mb-8">About</h2>
+      <div class="max-w-3xl space-y-5 text-lg text-gray-700 leading-relaxed">
+        <p>14 years in IT, focused on .NET, and recently expanded into .NET MAUI for cross-platform development.</p>
+        <p>Broad experience across Azure — App Service, SQL Server, and query/index optimization — alongside direct client-facing support.</p>
+        <p>Currently exploring GitHub AI agents and Claude Code as part of my day-to-day workflow.</p>
+        <p>Remote-first, flexible with hours, and driven by the project at hand.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Project -->
+  <section id="project" class="border-t border-gray-100">
+    <div class="max-w-5xl mx-auto px-6 py-16 md:py-24">
+      <h2 class="text-3xl font-bold text-accent mb-8">Featured Project</h2>
+
+      <div class="border border-gray-200 rounded-lg overflow-hidden">
+        <div class="bg-ink text-white px-8 py-10">
+          <h3 class="text-2xl font-bold">Fabrizio App</h3>
+          <p class="text-gray-300 mt-2">Cross-platform travel planning app</p>
+        </div>
+        <div class="px-8 py-8">
+          <p class="text-gray-700 leading-relaxed mb-6">
+            A cross-platform travel planning application built with a .NET MAUI client and a layered .NET 8 API.
+          </p>
+          <ul class="grid sm:grid-cols-2 gap-3 text-gray-700">
+            <li class="flex items-start gap-2">
+              <span class="text-accent mt-1">&#9656;</span>
+              <span>Layered architecture: API / BLL / DAL / Repository / Shared (DTOs) / MAUI client</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-accent mt-1">&#9656;</span>
+              <span>Azure App Service + Azure SQL Server</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-accent mt-1">&#9656;</span>
+              <span>JWT authentication</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-accent mt-1">&#9656;</span>
+              <span>GitHub Actions CI/CD</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills -->
+  <section id="skills" class="border-t border-gray-100 bg-gray-50">
+    <div class="max-w-5xl mx-auto px-6 py-16 md:py-24">
+      <h2 class="text-3xl font-bold text-accent mb-8">Skills</h2>
+      <div class="flex flex-wrap gap-3">
+        <span class="bg-white border border-gray-200 rounded-full px-4 py-2 text-sm font-medium">.NET 8</span>
+        <span class="bg-white border border-gray-200 rounded-full px-4 py-2 text-sm font-medium">.NET MAUI</span>
+        <span class="bg-white border border-gray-200 rounded-full px-4 py-2 text-sm font-medium">C#</span>
+        <span class="bg-white border border-gray-200 rounded-full px-4 py-2 text-sm font-medium">Entity Framework Core</span>
+        <span class="bg-white border border-gray-200 rounded-full px-4 py-2 text-sm font-medium">Azure App Service</span>
+        <span class="bg-white border border-gray-200 rounded-full px-4 py-2 text-sm font-medium">Azure SQL Server</span>
+        <span class="bg-white border border-gray-200 rounded-full px-4 py-2 text-sm font-medium">Azure Functions</span>
+        <span class="bg-white border border-gray-200 rounded-full px-4 py-2 text-sm font-medium">Azure WebJobs</span>
+        <span class="bg-white border border-gray-200 rounded-full px-4 py-2 text-sm font-medium">Query / Index Optimization</span>
+        <span class="bg-white border border-gray-200 rounded-full px-4 py-2 text-sm font-medium">JWT Authentication</span>
+        <span class="bg-white border border-gray-200 rounded-full px-4 py-2 text-sm font-medium">REST APIs</span>
+        <span class="bg-white border border-gray-200 rounded-full px-4 py-2 text-sm font-medium">GitHub Actions / CI-CD</span>
+        <span class="bg-white border border-gray-200 rounded-full px-4 py-2 text-sm font-medium">Client-Facing Support</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="border-t border-gray-100">
+    <div class="max-w-5xl mx-auto px-6 py-16 md:py-24">
+      <h2 class="text-3xl font-bold text-accent mb-4">Contact</h2>
+      <p class="text-lg text-gray-600 mb-10">I am looking forward to your message.</p>
+
+      <div class="flex flex-col sm:flex-row gap-4">
+        <a href="mailto:markomarkotasocial@gmail.com" class="flex items-center gap-3 border border-gray-200 rounded-lg px-6 py-4 hover:border-accent hover:text-accent transition-colors">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l9 6 9-6M3 6h18a1 1 0 011 1v10a1 1 0 01-1 1H3a1 1 0 01-1-1V7a1 1 0 011-1z"/></svg>
+          <span class="font-medium">markomarkotasocial@gmail.com</span>
+        </a>
+        <a href="https://linkedin.com/in/markomarkota" target="_blank" rel="noopener" class="flex items-center gap-3 border border-gray-200 rounded-lg px-6 py-4 hover:border-accent hover:text-accent transition-colors">
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.36V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 110-4.12 2.06 2.06 0 010 4.12zM7.12 20.45H3.56V9h3.56v11.45z"/></svg>
+          <span class="font-medium">linkedin.com/in/markomarkota</span>
+        </a>
+        <a href="https://github.com/markomarkota" target="_blank" rel="noopener" class="flex items-center gap-3 border border-gray-200 rounded-lg px-6 py-4 hover:border-accent hover:text-accent transition-colors">
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.58 2 12.25c0 4.53 2.87 8.37 6.84 9.73.5.1.68-.22.68-.49 0-.24-.01-1.04-.01-1.88-2.78.61-3.37-1.21-3.37-1.21-.45-1.18-1.11-1.49-1.11-1.49-.91-.63.07-.62.07-.62 1 .07 1.53 1.05 1.53 1.05.89 1.56 2.34 1.11 2.91.85.09-.66.35-1.11.63-1.37-2.22-.26-4.56-1.14-4.56-5.06 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.31.1-2.72 0 0 .84-.27 2.75 1.05a9.3 9.3 0 015 0c1.91-1.32 2.75-1.05 2.75-1.05.55 1.41.2 2.46.1 2.72.64.72 1.03 1.63 1.03 2.75 0 3.93-2.34 4.79-4.57 5.05.36.32.68.94.68 1.9 0 1.37-.01 2.47-.01 2.81 0 .27.18.6.69.49A10.26 10.26 0 0022 12.25C22 6.58 17.52 2 12 2z"/></svg>
+          <span class="font-medium">github.com/markomarkota</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="border-t border-gray-100">
+    <div class="max-w-5xl mx-auto px-6 py-8 text-sm text-gray-500 text-center">
+      &copy; 2026 Marko Markota
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('menuBtn').addEventListener('click', function () {
+      document.getElementById('mobileMenu').classList.toggle('hidden');
+    });
+  </script>
+
 </body>
 </html>
