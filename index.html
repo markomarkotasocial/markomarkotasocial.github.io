@@ -30,7 +30,7 @@
 
       <nav class="hidden md:flex items-center gap-8 text-sm font-medium">
         <a href="#about" class="hover:text-accent transition-colors">About</a>
-        <a href="#project" class="hover:text-accent transition-colors">Project</a>
+        <a href="#projects" class="hover:text-accent transition-colors">Projects</a>
         <a href="#skills" class="hover:text-accent transition-colors">Skills</a>
         <a href="#contact" class="border border-accent text-accent px-4 py-1.5 rounded hover:bg-accent hover:text-white transition-colors">Contact</a>
       </nav>
@@ -42,7 +42,7 @@
 
     <nav id="mobileMenu" class="hidden md:hidden border-t border-gray-100 px-6 py-4 flex flex-col gap-4 text-sm font-medium">
       <a href="#about" class="hover:text-accent transition-colors">About</a>
-      <a href="#project" class="hover:text-accent transition-colors">Project</a>
+      <a href="#projects" class="hover:text-accent transition-colors">Projects</a>
       <a href="#skills" class="hover:text-accent transition-colors">Skills</a>
       <a href="#contact" class="text-accent">Contact</a>
     </nav>
@@ -72,38 +72,70 @@
     </div>
   </section>
 
-  <!-- Featured Project -->
-  <section id="project" class="border-t border-gray-100">
+  <!-- Projects -->
+  <section id="projects" class="border-t border-gray-100">
     <div class="max-w-5xl mx-auto px-6 py-16 md:py-24">
-      <h2 class="text-3xl font-bold text-accent mb-8">Featured Project</h2>
+      <h2 class="text-3xl font-bold text-accent mb-8">Projects</h2>
 
-      <div class="border border-gray-200 rounded-lg overflow-hidden">
-        <div class="bg-ink text-white px-8 py-10">
-          <h3 class="text-2xl font-bold">Fabrizio App</h3>
-          <p class="text-gray-300 mt-2">Cross-platform travel planning app</p>
+      <div class="space-y-8">
+        <div class="border border-gray-200 rounded-lg overflow-hidden">
+          <div class="bg-ink text-white px-8 py-10">
+            <h3 class="text-2xl font-bold">Fabrizio App</h3>
+            <p class="text-gray-300 mt-2">Cross-platform travel planning app</p>
+          </div>
+          <div class="px-8 py-8">
+            <p class="text-gray-700 leading-relaxed mb-6">
+              A cross-platform travel planning application built with a .NET MAUI client and a layered .NET 8 API.
+            </p>
+            <ul class="grid sm:grid-cols-2 gap-3 text-gray-700">
+              <li class="flex items-start gap-2">
+                <span class="text-accent mt-1">&#9656;</span>
+                <span>Layered architecture: API / BLL / DAL / Repository / Shared (DTOs) / MAUI client</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-accent mt-1">&#9656;</span>
+                <span>Azure App Service + Azure SQL Server</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-accent mt-1">&#9656;</span>
+                <span>JWT authentication</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-accent mt-1">&#9656;</span>
+                <span>GitHub Actions CI/CD</span>
+              </li>
+            </ul>
+          </div>
         </div>
-        <div class="px-8 py-8">
-          <p class="text-gray-700 leading-relaxed mb-6">
-            A cross-platform travel planning application built with a .NET MAUI client and a layered .NET 8 API.
-          </p>
-          <ul class="grid sm:grid-cols-2 gap-3 text-gray-700">
-            <li class="flex items-start gap-2">
-              <span class="text-accent mt-1">&#9656;</span>
-              <span>Layered architecture: API / BLL / DAL / Repository / Shared (DTOs) / MAUI client</span>
-            </li>
-            <li class="flex items-start gap-2">
-              <span class="text-accent mt-1">&#9656;</span>
-              <span>Azure App Service + Azure SQL Server</span>
-            </li>
-            <li class="flex items-start gap-2">
-              <span class="text-accent mt-1">&#9656;</span>
-              <span>JWT authentication</span>
-            </li>
-            <li class="flex items-start gap-2">
-              <span class="text-accent mt-1">&#9656;</span>
-              <span>GitHub Actions CI/CD</span>
-            </li>
-          </ul>
+
+        <div class="border border-gray-200 rounded-lg overflow-hidden">
+          <div class="bg-ink text-white px-8 py-10">
+            <h3 class="text-2xl font-bold">line-chatbot</h3>
+            <p class="text-gray-300 mt-2">LINE Messaging API chatbot with a per-client knowledge base</p>
+          </div>
+          <div class="px-8 py-8">
+            <p class="text-gray-700 leading-relaxed mb-6">
+              A multi-tenant LINE Messaging API chatbot that answers user questions from a curated, per-client knowledge base using an LLM — one codebase, deployed separately per client with its own configuration.
+            </p>
+            <ul class="grid sm:grid-cols-2 gap-3 text-gray-700">
+              <li class="flex items-start gap-2">
+                <span class="text-accent mt-1">&#9656;</span>
+                <span>Multi-tenant: one codebase, per-client knowledge base and configuration</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-accent mt-1">&#9656;</span>
+                <span>LLM-grounded answers via Anthropic API or Vertex AI</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-accent mt-1">&#9656;</span>
+                <span>Node.js/TypeScript on Google Cloud Run, with Firestore and Secret Manager</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-accent mt-1">&#9656;</span>
+                <span>Human handover via a quick-reply button and webhook notification</span>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
@@ -127,6 +159,13 @@
         <span class="bg-white border border-gray-200 rounded-full px-4 py-2 text-sm font-medium">REST APIs</span>
         <span class="bg-white border border-gray-200 rounded-full px-4 py-2 text-sm font-medium">GitHub Actions / CI-CD</span>
         <span class="bg-white border border-gray-200 rounded-full px-4 py-2 text-sm font-medium">Client-Facing Support</span>
+        <span class="bg-white border border-gray-200 rounded-full px-4 py-2 text-sm font-medium">Node.js</span>
+        <span class="bg-white border border-gray-200 rounded-full px-4 py-2 text-sm font-medium">TypeScript</span>
+        <span class="bg-white border border-gray-200 rounded-full px-4 py-2 text-sm font-medium">LINE Messaging API</span>
+        <span class="bg-white border border-gray-200 rounded-full px-4 py-2 text-sm font-medium">Google Cloud Run</span>
+        <span class="bg-white border border-gray-200 rounded-full px-4 py-2 text-sm font-medium">Google Cloud Firestore</span>
+        <span class="bg-white border border-gray-200 rounded-full px-4 py-2 text-sm font-medium">GCP Secret Manager</span>
+        <span class="bg-white border border-gray-200 rounded-full px-4 py-2 text-sm font-medium">LLM Integration (Anthropic / Vertex AI)</span>
       </div>
     </div>
   </section>

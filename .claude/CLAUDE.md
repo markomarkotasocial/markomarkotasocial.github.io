@@ -13,7 +13,7 @@ This is a static, no-build site: no `package.json`, no test runner, no linter.
 ## Architecture
 
 - The entire site is one file, `index.html`. Styling is Tailwind CSS via CDN plus a small inline `tailwind.config` block that defines two custom color tokens, `accent` and `ink` — always restyle through these tokens (and Tailwind utilities) rather than hardcoding hex values or using Tailwind's default palette colors, so a global recolor stays a one-line change.
-- Navigation is duplicated by design: the desktop `<nav>` and the JS-toggled `#mobileMenu` block each hardcode their own copy of the same anchor links (`#about`, `#project`, `#skills`, `#contact`). Adding, renaming, or removing a section requires updating both.
+- Navigation is duplicated by design: the desktop `<nav>` and the JS-toggled `#mobileMenu` block each hardcode their own copy of the same anchor links (`#about`, `#projects`, `#skills`, `#contact`). Adding, renaming, or removing a section requires updating both.
 - The only JavaScript on the page is the mobile menu toggle at the end of the file.
 
 # Portfolio Website Build
@@ -44,7 +44,13 @@ Use this content exactly — do not invent or embellish beyond what's provided:
 - GitHub Actions CI/CD
 - Link to GitHub repo: [LINK]
 
-**[Additional projects — TO BE ADDED]**
+**Featured Project — line-chatbot**
+- Multi-tenant LINE Messaging API chatbot: answers user questions from a curated, per-client knowledge base using an LLM
+- One codebase, deployed separately per client with its own configuration
+- LLM-grounded answers via Anthropic API or Vertex AI
+- Node.js / TypeScript, deployed to Google Cloud Run, Firestore (conversation history + handover state), GCP Secret Manager for credentials
+- Human handover: "Talk to a person" quick reply button on every response; pauses the bot for that user and posts a notification to a Slack/Discord/generic webhook
+- No GitHub repo link provided
 
 **Skills**
 - .NET 8, .NET MAUI, C#
@@ -54,6 +60,10 @@ Use this content exactly — do not invent or embellish beyond what's provided:
 - JWT authentication, REST APIs
 - GitHub Actions / CI-CD
 - Client-facing support / communication
+- Node.js, TypeScript
+- LINE Messaging API
+- Google Cloud Run, Google Cloud Firestore, GCP Secret Manager
+- LLM integration (Anthropic API / Vertex AI)
 
 **Contact**
 - [Email / LinkedIn / GitHub — po tvom izboru]
